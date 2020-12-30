@@ -47,8 +47,3 @@ Changing password for user gfreeman.
 New password:
 Retype new password:
 passwd: all authentication tokens updated successfully.
-[cloud_user@ip-10-0-1-84 ~]$ sudo passwd avance
-Changing password for user avance.
-New password:
-Retype new password:
-passwd: all authentication tokens updated successfully.
