@@ -1,0 +1,54 @@
+/ $ ssh cloud_user@107.21.165.205
+
+Host '107.21.165.205' is not in the trusted hosts file.
+(ssh-ed25519 fingerprint sha1!! 47:38:ef:f6:7d:2e:04:8f:c2:44:f7:c8:a0:5c:61:3d:a0:03:e5:e1)
+Do you want to continue connecting? (y/n) y
+cloud_user@107.21.165.205's password:
+[cloud_user@ip-10-0-1-10 ~]$ sudo -i
+[sudo] password for cloud_user:
+Sorry, try again.
+[sudo] password for cloud_user:
+[root@ip-10-0-1-10 ~]# useradd tstark
+[root@ip-10-0-1-10 ~]# useradd cdanvers
+[root@ip-10-0-1-10 ~]# useradd dprince
+[root@ip-10-0-1-10 ~]# groupadd superhero
+[root@ip-10-0-1-10 ~]# usermod -g wheel tstark
+[root@ip-10-0-1-10 ~]# usermod -aG superhero tstark
+[root@ip-10-0-1-10 ~]# usermod -aG superhero cdanvers
+[root@ip-10-0-1-10 ~]# usermod -aG superhero dprince
+[root@ip-10-0-1-10 ~]# usermod -L dprince
+[root@ip-10-0-1-10 ~]# id tstark
+uid=1002(tstark) gid=10(wheel) groups=10(wheel),1005(superhero)
+[root@ip-10-0-1-10 ~]# id cdanvers
+uid=1003(cdanvers) gid=1003(cdanvers) groups=1003(cdanvers),1005(superhero)
+[root@ip-10-0-1-10 ~]# iddprince
+-bash: iddprince: command not found
+[root@ip-10-0-1-10 ~]# id dprince
+uid=1004(dprince) gid=1004(dprince) groups=1004(dprince),1005(superhero)
+[root@ip-10-0-1-10 ~]#
+ssh: Connection to cloud_user@107.21.165.205:22 exited: Remote closed the connection
+/ $ ssh cloud_user@35.174.107.139
+
+Host '35.174.107.139' is not in the trusted hosts file.
+(ssh-ed25519 fingerprint sha1!! e7:b4:4d:0f:bb:76:06:c2:d9:b7:5f:e8:9b:93:45:61:ad:dc:c5:e8)
+Do you want to continue connecting? (y/n) y
+cloud_user@35.174.107.139's password:
+[cloud_user@ip-10-0-1-84 ~]$ sudo useradd -m gfreeman
+[sudo] password for cloud_user:
+[cloud_user@ip-10-0-1-84 ~]$ sudo useradd -G wheel -m avance
+[cloud_user@ip-10-0-1-84 ~]$ id gfreemn
+id: gfreemn: no such user
+[cloud_user@ip-10-0-1-84 ~]$ id gfreeman
+uid=1002(gfreeman) gid=1002(gfreeman) groups=1002(gfreeman)
+[cloud_user@ip-10-0-1-84 ~]$ id avance
+uid=1003(avance) gid=1003(avance) groups=1003(avance),10(wheel)
+[cloud_user@ip-10-0-1-84 ~]$ sudo passwd gfreeman
+Changing password for user gfreeman.
+New password:
+Retype new password:
+passwd: all authentication tokens updated successfully.
+[cloud_user@ip-10-0-1-84 ~]$ sudo passwd avance
+Changing password for user avance.
+New password:
+Retype new password:
+passwd: all authentication tokens updated successfully.
